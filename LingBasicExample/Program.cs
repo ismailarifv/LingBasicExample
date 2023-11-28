@@ -9,7 +9,7 @@ namespace LinqBasicExample
             int categoryTop = 1;
             Console.SetCursorPosition(0, 0);
             Console.Write("Id");
-            Console.SetCursorPosition(5, 0);
+            Console.SetCursorPosition(5, 0); ;
             Console.Write("Name");
             Console.SetCursorPosition(20, 0);
             Console.WriteLine("Status");
