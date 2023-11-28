@@ -259,8 +259,48 @@ namespace LinqBasicExample
 
             var lastProduct = rangeProduct.Last();
             Console.WriteLine("Name: " + lastProduct.Name + "  Price: " + lastProduct.Price);
+            Console.WriteLine("------------------------------------------------------------------------------");
+            var skipProducts = rangeProduct.Skip(2);
 
+            foreach (var item in skipProducts)
+            {
+                Console.WriteLine("Name: " + item.Name + "  Price: " + item.Price);
+            }
+            Console.WriteLine("------------------------------------------------------------------------------");
 
+            var takeProducts = rangeProduct.Take(2);
+            foreach (var item in takeProducts)
+            {
+                Console.WriteLine("Name: " + item.Name + "  Price: " + item.Price);
+         
+            }
+            Console.WriteLine("------------------------------------------------------------------------------");
+            
+            
+            
+            rangeProduct.Reverse();
+            foreach (var item in rangeProduct)
+            {
+                Console.WriteLine("Name: " + item.Name + "  Price: " + item.Price);
+            }
+            Console.WriteLine("------------------------------------------------------------------------------");
+
+            string ad = "Yasir";
+            var yeniAd = ad.Reverse();
+
+            Console.WriteLine(string.Join("",yeniAd));
+
+            Console.WriteLine("------------------------------------------------------------------------------");
+
+            var mixedValues = new object[]
+            {
+                1,"Erhan",false,2,"Kaya",4,true,'a',30.1,12f
+            };
+
+            var stringValues = mixedValues.OfType<string>().ToArray();
+            var exceptValues = mixedValues.Except(stringValues).ToArray();
+            Console.WriteLine(string.Join(",",stringValues));
+            Console.WriteLine(string.Join(",", exceptValues));
 
         }
     }
